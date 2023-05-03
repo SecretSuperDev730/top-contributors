@@ -7,13 +7,6 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
 
-  // Uncoment to add domain whitelist
-  // images: {
-  //   domains: [
-  //     'res.cloudinary.com',
-  //   ],
-  // },
-
   // SVGR
   webpack(config) {
     config.module.rules.push({
@@ -31,6 +24,11 @@ const nextConfig = {
     });
 
     return config;
+  },
+  
+  env: {
+    NEXT_PUBLIC_SHOW_LOGGER: process.env.NEXT_PUBLIC_SHOW_LOGGER,
+    GITHUB_API_TOKEN: process.env.GITHUB_API_TOKEN,
   },
 };
 
